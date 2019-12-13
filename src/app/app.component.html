@@ -55,6 +55,19 @@
   <mat-icon>favorite</mat-icon>
 </button> -->
 
-<div>
+<!-- <div>
   <mat-button-toggle #toggleState disableRipple>{{toggleState.checked?'ON':'OFF'}}</mat-button-toggle>
+</div> -->
+
+
+<div>
+
+  <mat-button-toggle-group #toggleGroup="matButtonToggleGroup">
+    <mat-button-toggle value="cs">C#</mat-button-toggle>
+    <mat-button-toggle value="fs">F#</mat-button-toggle>
+    <mat-button-toggle value="vb">VB</mat-button-toggle>
+    <mat-button-toggle value="js">Java Script</mat-button-toggle>
+  </mat-button-toggle-group>
+
+  {{toggleGroup.value}}
 </div>
