@@ -27,3 +27,11 @@ To add smaller circular button mat-mini-fab
 
 ## Colors
 color="Primay" or Accent and Warn  attributes can be used to color buttons.
+
+##Toggle Button
+Import MatButtonToggleModule and use <<mat-button-toggle> to create toggle button. 
+  
+Add a template variable to access button state. Example 
+`
+<mat-button-toggle #toggleState disableRipple>{{toggleState.checked?'ON':'OFF'}}</mat-button-toggle>
+ `
