@@ -21,3 +21,7 @@ To create simpleest button add mat-button attribute.
 To add a raised button use mat-raised-button
 To add a flat button use mat-flat-button
 To add an outline button mat-stroked button
+To add icon button mat-icon attribute
+To add circlular button mat-fab
+To add smaller circular button mat-mini-fab
+
