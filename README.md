@@ -36,3 +36,8 @@ Add a template variable to access button state. Example
 `
 <mat-button-toggle #toggleState disableRipple>{{toggleState.checked?'ON':'OFF'}}</mat-button-toggle>
  `
+
+Toggle Group can be created to make toggle buttons behave like check box or radio buttons
+Default beahvior is like radio button. For checkbox add multiple attribute
+
+Create a template reference variable to access the value of the #toggleGroup="matButtonToggleGroup" When usng multiple a comma seperated list for values is  obtained.
