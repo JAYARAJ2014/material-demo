@@ -25,3 +25,5 @@ To add icon button mat-icon attribute
 To add circlular button mat-fab
 To add smaller circular button mat-mini-fab
 
+## Colors
+color="Primay" or Accent and Warn  attributes can be used to color buttons.
