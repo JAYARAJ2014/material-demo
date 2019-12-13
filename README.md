@@ -14,3 +14,10 @@ class="mat-display-4" is used for display class.
 added mat-headline and subheading classes to substitute for h1 etc.
 
 added mat-body for body text
+
+## Material button
+Import MatButton module
+To create simpleest button add mat-button attribute. 
+To add a raised button use mat-raised-button
+To add a flat button use mat-flat-button
+To add an outline button mat-stroked button
