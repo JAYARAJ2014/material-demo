@@ -51,6 +51,10 @@
 <button mat-raised-button disableRipple color="warn">Warn Button</button>
 -->
 
-<button mat-icon-button color="warn">
+<!-- <button mat-icon-button color="warn">
   <mat-icon>favorite</mat-icon>
-</button>
+</button> -->
+
+<div>
+  <mat-button-toggle #toggleButton disableRipple>{{toggleButton.checked?'ON':'OFF'}}</mat-button-toggle>
+</div>
