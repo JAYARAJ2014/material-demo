@@ -8,6 +8,9 @@ Created a new module ng g m material and removed the common module import statem
 Declared a constant named MaterialComponents and imported and exported it from the same module .
 Imported MaterialModule in to the app.module.ts
 
-class="mat-display-4" is used for display class.  Typography
+##  Typography
+class="mat-display-4" is used for display class.
 
 added mat-headline and subheading classes to substitute for h1 etc.
+
+added mat-body for body text
