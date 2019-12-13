@@ -7,4 +7,7 @@ Cleared contents of the app.component.html and added a button and a raised butto
 Created a new module ng g m material and removed the common module import statement.
 Declared a constant named MaterialComponents and imported and exported it from the same module .
 Imported MaterialModule in to the app.module.ts
- 
+
+class="mat-display-4" is used for display class.  Typography
+
+added mat-headline and subheading classes to substitute for h1 etc.
