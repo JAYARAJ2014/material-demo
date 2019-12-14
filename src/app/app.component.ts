@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   //   this.showProgress();
   // }
   showSpinner = false;
+  openedSideNav = false;
   ngOnInit(): void {
   }
 

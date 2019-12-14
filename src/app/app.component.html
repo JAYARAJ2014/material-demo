@@ -125,3 +125,12 @@ Progress 29:06
   <button mat-button>About </button>
   </div>
 </mat-toolbar>
+
+<mat-sidenav-container>
+  <mat-sidenav
+  mode="side" [(opened)]="openedSideNav">Side Content</mat-sidenav
+    >
+  <mat-sidenav-content>Main Content
+    <button (click)="openedSideNav=!openedSideNav">Toggle Sidenav</button>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -13,3 +13,13 @@
 span {
   padding-right: 1rem;
 }
+mat-sidenav-container {
+  height: 100%;
+}
+mat-sidenav, mat-sidenav-content {
+  padding: 16px;
+}
+mat-sidenav {
+  background-color: darkslategray;
+width:200px;
+}
