@@ -54,3 +54,8 @@ matBadgePosition can be used to control the position of the badge. Such as above
 Specifiy matBadgeSize medium, small and large to increase /decrease size. And matBadgeColor primary, warn etc
 Attribute binding can be used to bind matBadge to a property. 
 
+# Spinner
+
+mat-progress-spinner for definitive spinner  : you can set value 
+mat-spinner for indefinite : you show or hide based on condition
+
