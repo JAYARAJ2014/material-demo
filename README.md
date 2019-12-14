@@ -41,3 +41,16 @@ Toggle Group can be created to make toggle buttons behave like check box or radi
 Default beahvior is like radio button. For checkbox add multiple attribute
 
 Create a template reference variable to access the value of the #toggleGroup="matButtonToggleGroup" When usng multiple a comma seperated list for values is  obtained.
+
+## icons
+Import MatIconModule and use `<mat-icon>`
+Go to material.io/tools/icons and find out the appropriate icon text and use it. To set color use color attribute
+
+## badges
+https://material.angular.io/components/badge/overview
+
+Import MatBadgeModule and use a span tag with matBadge attribute
+matBadgePosition can be used to control the position of the badge. Such as above after, below before etc
+Specifiy matBadgeSize medium, small and large to increase /decrease size. And matBadgeColor primary, warn etc
+Attribute binding can be used to bind matBadge to a property. 
+

@@ -59,8 +59,7 @@
   <mat-button-toggle #toggleState disableRipple>{{toggleState.checked?'ON':'OFF'}}</mat-button-toggle>
 </div> -->
 
-
-<div>
+<!-- <div>
 
   <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" multiple>
     <mat-button-toggle value="cs">C#</mat-button-toggle>
@@ -70,9 +69,38 @@
   </mat-button-toggle-group>
 
   {{toggleGroup.value}}
-</div>
+</div> -->
 
 <!--
   https://www.youtube.com/watch?v=jUfEn032IL8
+  https://material.io/resources/icons/?style=baseline
 Progress 29:06
 -->
+<div>
+  <mat-icon color="warn">verified_user </mat-icon>
+</div>
+<div>
+  <span matBadge="100">Notifications </span>
+</div>
+<div>
+  <span matBadge="100" matBadgePosition="below before">Notifications </span>
+</div>
+
+<div>
+  <span matBadge="100" matBadgePosition="below after">Notifications </span>
+</div>
+
+<div>
+  <span matBadge="100" matBadgePosition="above before">Notifications </span>
+</div>
+<div>
+  <span matBadge="100" matBadgePosition="above before" matBadgeSize="small">Notifications </span>
+</div>
+<div>
+  <span [matBadge]="notifications" [matBadgeHidden]="!notifications || notifications===0"
+  matBadgeOverlap="true"
+  matBadgePosition="above before"
+  matBadgeSize="small"
+  matBadgeColor="warn">  <mat-icon  color="warn">verified_user </mat-icon>
+</span>
+</div>
