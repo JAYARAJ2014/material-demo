@@ -34,4 +34,8 @@ export class AppComponent implements OnInit {
     }, 5000);
   }
 
+  logChange(idx: number){
+    console.log('Selected Tab is ' + idx);
+  }
+
 }
