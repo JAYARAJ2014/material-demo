@@ -20,7 +20,7 @@ mat-sidenav, mat-sidenav-content {
   padding: 16px;
 }
 mat-sidenav {
-  background-color: darkslategray;
+  background-color: lightblue;
 width:200px;
 }
 
