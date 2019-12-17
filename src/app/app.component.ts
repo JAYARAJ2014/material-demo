@@ -9,6 +9,7 @@ export class AppComponent implements OnInit {
 
   title = 'material-demo';
   notifications = 2;
+  completed = false;
   // progressValue = 0;
 
   // showProgress() {
@@ -34,8 +35,12 @@ export class AppComponent implements OnInit {
     }, 5000);
   }
 
-  logChange(idx: number){
+  logChange(idx: number) {
     console.log('Selected Tab is ' + idx);
   }
 
+  setCompleted(p: boolean) {
+    this.completed = true;
+    
+  }
 }

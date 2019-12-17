@@ -250,7 +250,7 @@ Progress 29:06
 
   Tabs
  -->
-<!-- 
+<!--
 <mat-tab-group #tabRef (selectedTabChange)="logChange(tabRef.selectedIndex)">
   <mat-tab label="Angular">
 
@@ -260,3 +260,28 @@ Progress 29:06
     What is this?  </mat-tab>
 </mat-tab-group>
 {{tabRef.selectedIndex}} -->
+
+
+<!-- <mat-vertical-stepper>
+
+  <mat-step label="Shipping Address">
+  </mat-step >
+  <mat-step label="Billing Address">
+  </mat-step >
+  <mat-step label="Review Order">
+  </mat-step >
+</mat-vertical-stepper> -->
+<!--
+<mat-horizontal-stepper linear>
+ <mat-step label="Shipping Address" [(completed)]="completed">
+   <button mat-raised-button color="primary" (click)="setCompleted()">Accept</button>
+  <button mat-button matStepperNext>Next</button>
+</mat-step >
+  <mat-step label="Billing Address"  completed="false" >
+    <button mat-button matStepperPrevious>Back</button>
+    <button mat-button matStepperNext>Next</button>
+  </mat-step >
+  <mat-step label="Review Order"  completed="false">
+    <button mat-button matStepperPrevious>Back</button>
+  </mat-step >
+</mat-horizontal-stepper> -->
