@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   title = 'material-demo';
   notifications = 2;
   completed = false;
+  selectedValue ='';
   // progressValue = 0;
 
   // showProgress() {
@@ -41,6 +42,6 @@ export class AppComponent implements OnInit {
 
   setCompleted(p: boolean) {
     this.completed = true;
-    
+
   }
 }
