@@ -23,3 +23,7 @@ mat-sidenav {
   background-color: darkslategray;
 width:200px;
 }
+
+.center {
+  margin: 10rem;
+}

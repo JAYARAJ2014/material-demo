@@ -116,7 +116,7 @@ Progress 29:06
 <button mat-raised-button (click)="loadData()">Click Here!</button >
   <mat-spinner color="accent" *ngIf="showSpinner"></mat-spinner>
 </div> -->
-
+<!--
 <mat-toolbar  color="primary" class="navbar">
   <div>Digital Solutions</div>
   <div>
@@ -127,10 +127,65 @@ Progress 29:06
 </mat-toolbar>
 
 <mat-sidenav-container>
-  <mat-sidenav
-  mode="side" [(opened)]="openedSideNav">Side Content</mat-sidenav
+  <mat-sidenav #sidenav
+  mode="side"
+  [(opened)]="openedSideNav"
+  >Side Content</mat-sidenav
     >
   <mat-sidenav-content>Main Content
-    <button (click)="openedSideNav=!openedSideNav">Toggle Sidenav</button>
+    <!-- <button (click)="openedSideNav=!openedSideNav">Toggle Sidenav</button> -->
+<!--
+  <mat-button-toggle #toggleState [(checked)]="openedSideNav">{{toggleState.checked?'ON':'OFF'}}</mat-button-toggle>
+
+    <button (click)="sidenav.open()">Open Sidenav</button>
+    <button (click)="sidenav.close()">Close Sidenav</button>
   </mat-sidenav-content>
-</mat-sidenav-container>
+</mat-sidenav-container> -->
+
+<!--
+<mat-toolbar  color="primary" class="navbar">
+  <div>Digital Solutions</div>
+  <div>
+    <button mat-button class="center" [matMenuTriggerFor]="appMenu">File</button>
+  <button  mat-button>Home </button>
+  <button  mat-button>Services </button>
+  <button mat-button>About </button>
+  </div>
+</mat-toolbar>
+
+<mat-menu #appMenu="matMenu">
+  <button mat-menu-item [matMenuTriggerFor]="subMenuFrontEnd">Frontend</button>
+  <button mat-menu-item [matMenuTriggerFor]="subMenuMiddle">Middle Tier</button>
+  <button mat-menu-item [matMenuTriggerFor]="subMenuBackend">Backend</button>
+</mat-menu>
+<!-- if there is no space xPos and yPos are not effective -->
+<!-- <mat-menu #subMenuFrontEnd="matMenu" xPosition="after" yPosition="above">
+  <button mat-menu-item>Angular</button>
+  <button mat-menu-item>React</button>
+  <button mat-menu-item>Vue</button>
+</mat-menu>
+
+<mat-menu #subMenuBackend="matMenu">
+  <button mat-menu-item>Sql Server</button>
+  <button mat-menu-item>Mongo DB</button>
+  <button mat-menu-item>Dynamo</button>
+</mat-menu>
+<mat-menu #subMenuMiddle="matMenu">
+  <button mat-menu-item>.NET Core</button>
+  <button mat-menu-item>Ruby</button>
+  <button mat-menu-item>NodeJS</button>
+<!-- </mat-menu>  -->
+
+<mat-menu #lazyMenu="matMenu">
+
+  <ng-template matMenuContent let-name="name">
+    <button mat-menu-item>Settings </button>
+    <button mat-menu-item>Logout {{name}}</button>
+  </ng-template>
+
+</mat-menu>
+
+<button [matMenuTriggerData]="{name: 'Digital Solutions'}"
+[matMenuTriggerFor]="lazyMenu"> Digital Solutions </button>
+<button [matMenuTriggerData]="{name: 'Jayaraj'}"
+[matMenuTriggerFor]="lazyMenu"> Jayaraj</button>
