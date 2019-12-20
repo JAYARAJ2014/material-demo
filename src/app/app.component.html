@@ -300,7 +300,7 @@ Progress 29:06
 
 <!--  -->
 <!-- Select -->
-
+<!--
 <mat-form-field>
   <mat-label>Choose An Option</mat-label>
   <mat-select [(value)]="selectedValue" >
@@ -309,9 +309,19 @@ Progress 29:06
     <mat-option value="vue">Vue</mat-option>
   </mat-select>
 </mat-form-field>
-{{selectedValue}}
+{{selectedValue}} -->
 
+<form>
+  <mat-form-field>
+    <input type="text" matInput [matAutocomplete]="auto" [formControl]="myControl" />
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
 
+</form>
 <!--
   1:48
   https://www.youtube.com/watch?v=jUfEn032IL8 -->

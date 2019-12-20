@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +13,7 @@ export class AppComponent implements OnInit {
   title = 'material-demo';
   notifications = 2;
   completed = false;
-  selectedValue ='';
+  selectedValue = '';
   // progressValue = 0;
 
   // showProgress() {
@@ -26,7 +29,25 @@ export class AppComponent implements OnInit {
   // }
   showSpinner = false;
   openedSideNav = false;
+
+  myControl = new FormControl();
+  filteredOptions: Observable<string[]>;
+  options =['Angular' , 'React', 'Vue', 'jQuery', 'knockout']
+    // [{ name: 'Angular' },
+    // { name: 'React' },
+    // { name: 'Vue' }];
+
   ngOnInit(): void {
+
+    this.filteredOptions = this.myControl.valueChanges.pipe(
+      startWith(''),
+      map(value => this._filter(value))
+    );
+  }
+  _filter(value: string): string[] {
+
+    const filteredValue = value.toLowerCase();
+    return this.options.filter(option => option.toLowerCase().includes(filteredValue));
   }
 
   loadData() {
@@ -43,5 +64,8 @@ export class AppComponent implements OnInit {
   setCompleted(p: boolean) {
     this.completed = true;
 
+  }
+  displayFn(subject) {
+    return subject ? subject.name : undefined;
   }
 }
