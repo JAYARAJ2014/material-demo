@@ -1,4 +1,4 @@
-<!-- <button mat-button>Hello World!</button>
+<!-- <!-- <button mat-button>Hello World!</button>
 <button mat-raised-button>Hello Another World!</button>
 
 <div class="mat-display-4">mat-display-4</div>
@@ -349,6 +349,41 @@ matInput/> -->
 matTooltip="Click here to navigate">Click Here</button> -->
 
 <!-- snackbar -->
-<button mat-raised-button (click)="showSnackbar('Item deleted', 'Undo')">Delete!</button>
+<!-- <button mat-raised-button (click)="showSnackbar('Item deleted', 'Undo')">Delete!</button>
 <button mat-raised-button (click)="showCustomSnackbar()">Show Custom!</button>
-<button mat-raised-button (click)="showDialog()">Show Dialog!</button>
+<button mat-raised-button (click)="showDialog()">Show Dialog!</button> -->
+
+
+
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <!-- Position Column -->
+  <ng-container matColumnDef="position">
+    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="weight">
+    <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="symbol">
+    <mat-header-cell *matHeaderCellDef> Symbol </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.symbol}} </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="action">
+    <mat-header-cell *matHeaderCellDef>Action </mat-header-cell>
+    <mat-cell *matCellDef="let row"> <button (click)="logData(row)" color="warn" mat-raised-button>Delete </button>  </mat-cell>
+  </ng-container>
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>

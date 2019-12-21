@@ -1,7 +1,7 @@
-<h2 mat-dialog-title>Sesion Timeout</h2>
-<mat-dialog-content> Hi {{data.name}},<br>You will be logged out due to inactivity</mat-dialog-content>
+<h2 mat-dialog-title >{{data.dialogTitle}}</h2>
+<mat-dialog-content> <strong> Hi {{data.name}},</strong><br> {{data.message}}</mat-dialog-content>
 
 <mat-dialog-actions>
-  <button mat-raised-button mat-dialog-close mat-dialog-close="keep">I'm still here!</button>
-  <button mat-raised-button mat-dialog-close mat-dialog-close="logout">Logout</button>
+  <button mat-raised-button color="warn" mat-dialog-close mat-dialog-close="yes">{{data.yesText}}</button>
+  <button mat-raised-button color="primary" mat-dialog-close mat-dialog-close="no">{{data.noText}}</button>
 </mat-dialog-actions>
