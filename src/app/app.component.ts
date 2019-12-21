@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { MatSnackBar } from '@angular/material';
+import { MatSnackBar, MatDialog } from '@angular/material';
 import { CustomSnackBarComponent } from './custom-snack-bar.component';
+import { ModelDialogComponent } from './model-dialog.component';
 
 @Component({
   selector: 'app-root',
@@ -41,7 +42,7 @@ export class AppComponent implements OnInit {
   shape: string;
   minDate = new Date(2019, 0, 1);
   maxDate = new Date(2019, 11, 31);
-  constructor(private snackBar: MatSnackBar) {
+  constructor(private snackBar: MatSnackBar, public dialog: MatDialog) {
 
   }
   ngOnInit(): void {
@@ -87,6 +88,11 @@ export class AppComponent implements OnInit {
     });
   }
   showCustomSnackbar() {
-    this.snackBar.openFromComponent(CustomSnackBarComponent, {duration: 2000});
+    this.snackBar.openFromComponent(CustomSnackBarComponent, { duration: 2000 });
+  }
+  showDialog() {
+    const dialogRef = this.dialog.open(ModelDialogComponent, { data: {name: 'Jayaraj'}});
+
+    dialogRef.afterClosed().subscribe(result => { console.log(result); });
   }
 }

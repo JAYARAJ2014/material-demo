@@ -7,13 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomSnackBarComponent } from './custom-snack-bar.component';
+import { ModelDialogComponent } from './model-dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomSnackBarComponent
+    CustomSnackBarComponent,
+    ModelDialogComponent
   ],
-  entryComponents:[CustomSnackBarComponent],
+  entryComponents:[CustomSnackBarComponent, ModelDialogComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
