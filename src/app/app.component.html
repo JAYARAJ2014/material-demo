@@ -311,7 +311,7 @@ Progress 29:06
 </mat-form-field>
 {{selectedValue}} -->
 
-<form>
+<!-- <form>
   <mat-form-field>
     <input type="text" matInput [matAutocomplete]="auto" [formControl]="myControl" />
     <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
@@ -321,7 +321,29 @@ Progress 29:06
     </mat-autocomplete>
   </mat-form-field>
 
-</form>
+</form> -->
 <!--
   1:48
   https://www.youtube.com/watch?v=jUfEn032IL8 -->
+
+  <!-- <mat-checkbox color="primary">    Subscribe  </mat-checkbox>
+  <mat-checkbox color="warn">    Subscribe  </mat-checkbox>
+<br/>
+  <mat-radio-group [(ngModel)]="shape">
+    <mat-radio-button color="primary" value="Circle" >Circle</mat-radio-button>
+    <mat-radio-button color="warn" value="Square">Square</mat-radio-button>
+    <mat-radio-button value="Rectangle">Rectangle</mat-radio-button>
+  </mat-radio-group>
+  <!-- {{shape}} -->
+<!-- <input type="text" [value]="shape"
+matInput/> -->
+
+<mat-form-field>
+  <input matInput [matDatepicker]="myDatePicker"  [min]="minDate" [max]="maxDate">
+  <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
+  <mat-datepicker #myDatePicker ></mat-datepicker>
+</mat-form-field>
+
+
+<button mat-raised-button
+matTooltip="Click here to navigate">Click Here</button>

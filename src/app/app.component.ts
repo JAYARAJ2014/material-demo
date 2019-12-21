@@ -32,11 +32,13 @@ export class AppComponent implements OnInit {
 
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
-  options =['Angular' , 'React', 'Vue', 'jQuery', 'knockout']
-    // [{ name: 'Angular' },
-    // { name: 'React' },
-    // { name: 'Vue' }];
-
+  options = ['Angular', 'React', 'Vue', 'jQuery', 'knockout']
+  // [{ name: 'Angular' },
+  // { name: 'React' },
+  // { name: 'Vue' }];
+  shape: string;
+  minDate = new Date(2019, 0, 1);
+  maxDate = new Date(2019, 11, 31);
   ngOnInit(): void {
 
     this.filteredOptions = this.myControl.valueChanges.pipe(
