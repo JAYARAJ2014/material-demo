@@ -337,7 +337,7 @@ Progress 29:06
   <!-- {{shape}} -->
 <!-- <input type="text" [value]="shape"
 matInput/> -->
-
+<!--
 <mat-form-field>
   <input matInput [matDatepicker]="myDatePicker"  [min]="minDate" [max]="maxDate">
   <mat-datepicker-toggle [for]="myDatePicker" matSuffix></mat-datepicker-toggle>
@@ -346,4 +346,8 @@ matInput/> -->
 
 
 <button mat-raised-button
-matTooltip="Click here to navigate">Click Here</button>
+matTooltip="Click here to navigate">Click Here</button> -->
+
+<!-- snackbar -->
+<button mat-raised-button (click)="showSnackbar('Item deleted', 'Undo')">Delete!</button>
+<button mat-raised-button (click)="showCustomSnackbar()">Show Custom!</button>

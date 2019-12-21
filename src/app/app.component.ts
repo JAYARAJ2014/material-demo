@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { MatSnackBar } from '@angular/material';
+import { CustomSnackBarComponent } from './custom-snack-bar.component';
 
 @Component({
   selector: 'app-root',
@@ -39,6 +41,9 @@ export class AppComponent implements OnInit {
   shape: string;
   minDate = new Date(2019, 0, 1);
   maxDate = new Date(2019, 11, 31);
+  constructor(private snackBar: MatSnackBar) {
+
+  }
   ngOnInit(): void {
 
     this.filteredOptions = this.myControl.valueChanges.pipe(
@@ -69,5 +74,19 @@ export class AppComponent implements OnInit {
   }
   displayFn(subject) {
     return subject ? subject.name : undefined;
+  }
+
+  showSnackbar(message: string, action, ) {
+    const snackBarRef = this.snackBar.open(message, action, { duration: 2000 });
+    snackBarRef.afterDismissed().subscribe(() => {
+      console.log('dismissed');
+    });
+
+    snackBarRef.onAction().subscribe(() => {
+      console.log('Action Triggered');
+    });
+  }
+  showCustomSnackbar() {
+    this.snackBar.openFromComponent(CustomSnackBarComponent, {duration: 2000});
   }
 }
