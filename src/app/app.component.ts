@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { MatSnackBar, MatDialog } from '@angular/material';
+import { MatSnackBar, MatDialog, MatTableDataSource } from '@angular/material';
 import { CustomSnackBarComponent } from './custom-snack-bar.component';
 import { ModelDialogComponent } from './model-dialog.component';
-import { $ } from 'protractor';
 export interface PeriodicElement {
   name: string;
   position: number;
@@ -63,7 +62,7 @@ export class AppComponent implements OnInit {
   maxDate = new Date(2019, 11, 31);
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'action'];
   displayedColumnsData: string[] = ['position', 'name', 'symbol', 'action'];
-  dataSource = ELEMENT_DATA;
+  dataSource = new MatTableDataSource(ELEMENT_DATA);
   constructor(private snackBar: MatSnackBar, public dialog: MatDialog) {
 
   }
@@ -79,7 +78,10 @@ export class AppComponent implements OnInit {
     const filteredValue = value.toLowerCase();
     return this.options.filter(option => option.toLowerCase().includes(filteredValue));
   }
-
+  onKeyUp(filterValue: string) {
+    console.log('entered ' + filterValue);
+    this.dataSource.filter= filterValue.trim().toLowerCase();
+  }
   loadData() {
     this.showSpinner = true;
     setTimeout(() => {

@@ -354,7 +354,9 @@ matTooltip="Click here to navigate">Click Here</button> -->
 <button mat-raised-button (click)="showDialog()">Show Dialog!</button> -->
 
 
-
+<mat-form-field >
+  <input matInput  placeholder="Filter" (keyup)="onKeyUp($event.target.value)"/>
+</mat-form-field>
 
 <mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <!-- Position Column -->
