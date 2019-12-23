@@ -358,22 +358,22 @@ matTooltip="Click here to navigate">Click Here</button> -->
   <input matInput  placeholder="Filter" (keyup)="onKeyUp($event.target.value)"/>
 </mat-form-field>
 
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
   <!-- Position Column -->
   <ng-container matColumnDef="position">
-    <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+    <mat-header-cell mat-sort-header *matHeaderCellDef> No. </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
   </ng-container>
 
   <!-- Name Column -->
   <ng-container matColumnDef="name">
-    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-header-cell mat-sort-header  *matHeaderCellDef> Name </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
   </ng-container>
 
   <!-- Weight Column -->
   <ng-container matColumnDef="weight">
-    <mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>
+    <mat-header-cell mat-sort-header  *matHeaderCellDef> Weight </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.weight}} </mat-cell>
   </ng-container>
 

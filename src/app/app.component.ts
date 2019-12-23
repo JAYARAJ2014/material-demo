@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
-import { MatSnackBar, MatDialog, MatTableDataSource } from '@angular/material';
+import { MatSnackBar, MatDialog, MatTableDataSource, MatSort } from '@angular/material';
 import { CustomSnackBarComponent } from './custom-snack-bar.component';
 import { ModelDialogComponent } from './model-dialog.component';
 export interface PeriodicElement {
@@ -63,6 +63,7 @@ export class AppComponent implements OnInit {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol', 'action'];
   displayedColumnsData: string[] = ['position', 'name', 'symbol', 'action'];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
+  @ViewChild(MatSort, { static: true }) sort: MatSort;
   constructor(private snackBar: MatSnackBar, public dialog: MatDialog) {
 
   }
@@ -72,6 +73,7 @@ export class AppComponent implements OnInit {
       startWith(''),
       map(value => this._filter(value))
     );
+    this.dataSource.sort = this.sort;
   }
   _filter(value: string): string[] {
 
@@ -80,7 +82,7 @@ export class AppComponent implements OnInit {
   }
   onKeyUp(filterValue: string) {
     console.log('entered ' + filterValue);
-    this.dataSource.filter= filterValue.trim().toLowerCase();
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
   loadData() {
     this.showSpinner = true;
